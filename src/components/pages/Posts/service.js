@@ -3,16 +3,16 @@ import {
     CLIENT_ID,
 } from '../../../system/settings';
 
-export const listPhotos = (limit = 10, page = 1) => {
+export const listPosts = () => {
 
-    const url = `${BASE_URL}?client_id=${CLIENT_ID}&per_page=${limit}&page=${page}`;
+    const url = `${BASE_URL}`;
 
     return fetch(url).then(response => {
         return response.json();
     });
 }
 
-export const likePhoto = (photo, like) => {
+export const likePost = (photo, like) => {
 
     const url = `${BASE_URL}${photo.id}/like/?client_id=${CLIENT_ID}`;
 
