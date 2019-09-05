@@ -4,12 +4,9 @@ import './style.scss';
 
 function Header(props) {
 
-    const { changePage } = props;
-
     return (
         <div id="header">
-            <Menu changePage={changePage} />
-            <span>Hello Header</span>
+            <Menu />
         </div>
     )
 }

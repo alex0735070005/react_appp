@@ -1,16 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.scss';
 
 function Menu(props) {
 
-    const { changePage } = props;
-
     return (
-        <div id="menu">
-            <a onClick={changePage} href="/photos">photos</a>
-            <br />
-            <a onClick={changePage} href="/favorite">favorite</a>
-        </div>
+        <ul id="menu">
+            <li><NavLink exact to="/">photos</NavLink></li>
+            <li><NavLink to="/favorite">favorite</NavLink></li>
+        </ul>
     )
 }
 
