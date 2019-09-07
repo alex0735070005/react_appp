@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
 import List from './components/List';
 import { listPosts } from './service';
 import './style.scss';
 
-function Posts() {
-    const [posts, changePosts] = useState([]);
+function Posts(props) {
+
+    const { posts, setPosts } = props;
 
     useEffect(() => {
         listPosts()
             .then((data) => {
-                console.log(data);
-                changePosts(data);
+                // console.log(data);
+                setPosts(data);
             });
     }, []);
-
 
     return (
         <div id="posts">
@@ -22,4 +24,19 @@ function Posts() {
     )
 }
 
-export default Posts;
+const mapDispatchToProps = dispatch => {
+    return { 
+        setPosts: dataPosts => {
+            dispatch({type: 'SET_POSTS', dataPosts});
+        }
+    }
+}
+
+const mapStateToProps = state => {
+
+    return {
+        posts: state.posts.dataPosts,
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Posts);
