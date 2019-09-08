@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Favorite from '../components/pages/Favorite';
-import Posts from '../components/pages/Posts';
+import Favorite from '../components/pages/posts/Favorite';
+import Posts from '../components/pages/posts/Post';
 
 function Router(props) {
 

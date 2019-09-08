@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Post(props) {
+function Item(props) {
 
     const {
         title,
@@ -11,9 +11,17 @@ function Post(props) {
         data_update,
     } = props.post;
 
+    const { addFavorite, post } = props;
+
+    const add = () => {
+        addFavorite(post);
+    }
+
+    const checkbox = addFavorite ? <input onClick={add} type="checkbox" /> : '';
+
     return (
         <div className="post">
-            <input type="checkbox" />
+            {checkbox}
             <i>{data_update}</i>
             <span>{likes}</span>
             <h1>{title}</h1>
@@ -23,4 +31,4 @@ function Post(props) {
     )
 }
 
-export default Post;
+export default Item;

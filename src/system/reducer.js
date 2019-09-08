@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import favorite from '../components/pages/Favorite/reducer';
-import posts from '../components/pages/Posts/reducer';
+import favorite from '../components/pages/posts/Favorite/reducer';
+import posts from '../components/pages/posts/Post/reducer';
 
 export default combineReducers({
     favorite,

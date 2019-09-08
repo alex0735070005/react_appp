@@ -1,7 +1,7 @@
 import {
     BASE_URL,
     CLIENT_ID,
-} from '../../../system/settings';
+} from '../../../../system/settings';
 
 export const listPosts = () => {
 
