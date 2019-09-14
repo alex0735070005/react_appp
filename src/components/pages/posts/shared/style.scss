@@ -20,5 +20,19 @@
             right: 5px;
             top: 5px;
         }
+
+        span {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            background: red;
+            line-height: 30px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
     }
 }

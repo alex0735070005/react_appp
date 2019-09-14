@@ -12,14 +12,21 @@ export const listPosts = () => {
     });
 }
 
-export const likePost = (photo, like) => {
+export const getPost = id => {
 
-    const url = `${BASE_URL}${photo.id}/like/?client_id=${CLIENT_ID}`;
+    const url = `${BASE_URL}/${id}`;
 
-    return fetch(url, {
-        method: 'POST',
-    }).then(response => {
+    return fetch(url).then(response => {
         return response.json();
     });
 }
 
+export const updatePost = data => {
+
+    return fetch(`${BASE_URL}/update/${data.id}`, {
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(response => {
+        return response.json();
+    });
+}
